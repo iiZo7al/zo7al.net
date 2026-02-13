@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/all.min.css">
+<link rel="icon" href="images/logo.png">
+<link rel="stylesheet" href="css/style.css">
+<title>ZO7AL Network</title>
+</head>
+
+<body>
+
+<!-- Loading -->
+<div class="loading-screen" id="loadingScreen">
+    <div class="loading-logo">
+        <img src="images/logo.png" alt="ZO7AL Logo">
+    </div>
+    <div class="loading-bar">
+        <div class="loading-progress"></div>
+    </div>
+    <p class="loading-text">Loading ZO7AL</p>
+</div>
+
+<!-- Notification -->
+<div class="notification" id="notification">
+    <i class="fas fa-check-circle"></i>
+    <div class="notification-text">
+        <h4>IP Copied!</h4>
+        <p>Mc.Zo7al.net</p>
+    </div>
+</div>
+
+<!-- Header -->
+<header id="header">
+    <a href="#" class="logo">
+        <img src="images/logo.png" alt="ZO7AL Logo" class="logo-img">
+        <span class="logo-text">ZO7AL</span>
+    </a>
+
+    <div class="menu-toggle" id="menuToggle">
+        <span></span><span></span><span></span>
+    </div>
+
+    <nav class="nav-menu" id="navMenu">
+        <a href="#home"><i class="fas fa-home"></i> Home</a>
+        <a href="#how-to-join"><i class="fas fa-gamepad"></i> How to Join</a>
+        <a href="#store"><i class="fas fa-crown"></i> Store</a>
+    </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="stars" id="stars"></div>
+
+    <div class="hero-content">
+        <div class="hero-logo">
+            <img src="images/logo.png" alt="ZO7AL Logo">
+        </div>
+
+        <h1>ZO7AL NETWORK</h1>
+        <p>Premium Minecraft Server with Unique Gameplay Experience</p>
+
+        <div class="hero-buttons">
+            <button class="btn-primary" id="copyBtn">
+                <i class="fas fa-play"></i> JOIN NOW
+            </button>
+
+            <a href="https://discord.gg/nxScVYrSXq" class="btn-secondary">
+                <i class="fab fa-discord"></i> DISCORD
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- How To Join -->
+<section class="how-to-join" id="how-to-join">
+<div class="section-header">
+    <h2><i class="fas fa-rocket"></i> How to Join</h2>
+    <div class="section-line"></div>
+</div>
+
+<div class="steps-container">
+
+<div class="step-card">
+<span class="step-number">01</span>
+<div class="step-icon"><i class="fas fa-copy"></i></div>
+<h3>Copy Server IP</h3>
+<p>Click JOIN NOW to copy server IP automatically.</p>
+</div>
+
+<div class="step-card">
+<span class="step-number">02</span>
+<div class="step-icon"><i class="fas fa-gamepad"></i></div>
+<h3>Launch Minecraft</h3>
+<p>Open Minecraft Java Edition 1.21+</p>
+</div>
+
+<div class="step-card">
+<span class="step-number">03</span>
+<div class="step-icon"><i class="fas fa-server"></i></div>
+<h3>Join & Play</h3>
+<p>Add server → Paste IP → Join</p>
+</div>
+
+</div>
+</section>
+
+<!-- Store (Ranks Only) -->
+<section class="store" id="store">
+
+<div class="section-header">
+<h2><i class="fas fa-crown"></i> Store</h2>
+<div class="section-line"></div>
+</div>
+
+<div class="ranks-grid">
+
+<!-- Five+ -->
+<div class="rank-card five-plus">
+<div class="rank-image">
+<div class="image-placeholder">
+<img src="images/teast.png" class="rank-real-image">
+</div>
+</div>
+
+<div class="rank-header">
+<span class="popular-badge">POPULAR</span>
+<h3 class="rank-name">MVP+</h3>
+<div class="rank-price">$30 <span>USD</span></div>
+</div>
+
+<div class="rank-features">
+<ul>
+<li><i class="fas fa-check"></i>Higher priority in TAB</li>
+<li><i class="fas fa-check"></i>15x Vaults</li>
+<li><i class="fas fa-check"></i>15 Auction Slots</li>
+<li><i class="fas fa-check"></i>Priority Access</li>
+</ul>
+</div>
+
+<div class="rank-footer">
+<button class="buy-btn locked-btn" disabled>
+<i class="fas fa-lock"></i> Locked
+</button>
+</div>
+</div>
+
+<!-- Five -->
+<div class="rank-card five">
+<div class="rank-image">
+<div class="image-placeholder">
+<img src="images/teast2.png" class="rank-real-image">
+</div>
+</div>
+
+<div class="rank-header">
+<h3 class="rank-name">MVP</h3>
+<div class="rank-price">$20 <span>USD</span></div>
+</div>
+
+<div class="rank-features">
+<ul>
+<li><i class="fas fa-check"></i>10x Vaults</li>
+<li><i class="fas fa-check"></i>10 Auction Slots</li>
+<li><i class="fas fa-check"></i>Priority Access</li>
+</ul>
+</div>
+
+<div class="rank-footer">
+<button class="buy-btn locked-btn" disabled>
+<i class="fas fa-lock"></i> Locked
+</button>
+</div>
+</div>
+
+<!-- Melon -->
+<div class="rank-card melon">
+<div class="rank-image">
+<div class="image-placeholder">
+<img src="images/teast3.png" class="rank-real-image">
+</div>
+</div>
+
+<div class="rank-header">
+<h3 class="rank-name">VIP</h3>
+<div class="rank-price">$10 <span>USD</span></div>
+</div>
+
+<div class="rank-features">
+<ul>
+<li><i class="fas fa-check"></i>5 Auction Slots</li>
+<li><i class="fas fa-check"></i>Priority Access</li>
+<li><i class="fas fa-check"></i>3x Warps</li>
+</ul>
+</div>
+
+<div class="rank-footer">
+<button class="buy-btn locked-btn" disabled>
+<i class="fas fa-lock"></i> Locked
+</button>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<div class="footer-content">
+<div class="footer-brand">
+<img src="images/logo.png" class="footer-logo">
+<div class="footer-text">
+<h3>ZO7AL NETWORK</h3>
+<p>The Ultimate Minecraft Experience</p>
+</div>
+</div>
+
+<div class="footer-links">
+<a href="https://tiktok.com/@iizo7al"><i class="fab fa-tiktok"></i></a>
+<a href="https://discord.gg/nxScVYrSXq"><i class="fab fa-discord"></i></a>
+<a href="https://youtube.com/@iiZo7al"><i class="fab fa-youtube"></i></a>
+<a href="https://instagram.com/iiZo7al"><i class="fab fa-instagram"></i></a>
+</div>
+</div>
+
+<div class="footer-bottom">
+<p>© <span id="year"></span> <span>ZO7AL Network</span>. All rights reserved.</p>
+</div>
+</footer>
+
+<button class="scroll-top" id="scrollTop">
+<i class="fas fa-chevron-up"></i>
+</button>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<script src="js/secrept.js"></script>
+
+</body>
+</html>

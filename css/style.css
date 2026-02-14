@@ -1887,3 +1887,40 @@ footer {
     font-size: 0.8em;
     opacity: 0.7;
 }
+.store-countdown {
+    text-align: center;
+    margin: 30px auto 50px;
+}
+
+.store-countdown h3 {
+    color: #8A2BE2;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.time-box {
+    background: rgba(138, 43, 226, 0.15);
+    border: 1px solid rgba(138, 43, 226, 0.35);
+    padding: 18px 22px;
+    border-radius: 15px;
+    min-width: 95px;
+}
+
+.time-box span {
+    font-size: 2em;
+    font-weight: 800;
+    display: block;
+}
+
+.time-box small {
+    font-size: 0.8em;
+    opacity: 0.75;
+}
+

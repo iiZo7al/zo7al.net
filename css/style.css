@@ -1923,4 +1923,57 @@ footer {
     font-size: 0.8em;
     opacity: 0.75;
 }
+/* ===== Store Countdown (fix position) ===== */
+.store-countdown-wrap{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+  margin: 18px 0 35px;
+}
+
+.store-countdown-title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color: var(--text-gray);
+  font-weight:600;
+}
+
+.store-countdown-title i{
+  color: var(--primary-color);
+}
+
+.store-countdown{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.cd-box{
+  width:90px;
+  padding:12px 10px;
+  border-radius:14px;
+  background: rgba(255,255,255,0.06);
+  border:1px solid var(--border-color);
+  text-align:center;
+  backdrop-filter: blur(10px);
+}
+
+.cd-num{
+  font-family: 'Orbitron', sans-serif;
+  font-weight:900;
+  font-size:26px;
+  color: var(--text-light);
+  line-height:1;
+}
+
+.cd-label{
+  margin-top:6px;
+  font-size:11px;
+  color: var(--text-gray);
+  letter-spacing:0.5px;
+}
+
 

@@ -411,30 +411,27 @@ document.querySelectorAll('.package-card, .key-card').forEach(card => {
 });
 
 window.addEventListener('resize', optimizeImages);
-
 // =========================
-// STORE COUNTDOWN (15 رمضان - 3 العصر - توقيت السعودية)
+// Store Countdown (ADD ONLY)
 // =========================
+// غيّر التاريخ هنا لوقت افتتاح المتجر
+const storeOpenDate = new Date("2026-03-01T20:00:00").getTime();
 
-// ✅ هذا تاريخ ثابت، إذا تبي تغيّره قلّي
-const storeLaunchDate = new Date("2026-03-15T15:00:00+03:00").getTime();
+function scPad(n){ return String(n).padStart(2, "0"); }
 
-function pad2(n) {
-  return String(n).padStart(2, "0");
-}
+function updateStoreCountdown(){
+  const dEl = document.getElementById("scDays");
+  const hEl = document.getElementById("scHours");
+  const mEl = document.getElementById("scMinutes");
+  const sEl = document.getElementById("scSeconds");
 
-function updateCountdown() {
+  // إذا القسم مو موجود (احتياط)
+  if(!dEl || !hEl || !mEl || !sEl) return;
+
   const now = Date.now();
-  const diff = storeLaunchDate - now;
+  const diff = storeOpenDate - now;
 
-  const dEl = document.getElementById("store-days");
-  const hEl = document.getElementById("store-hours");
-  const mEl = document.getElementById("store-minutes");
-  const sEl = document.getElementById("store-seconds");
-
-  if (!dEl || !hEl || !mEl || !sEl) return;
-
-  if (diff <= 0) {
+  if(diff <= 0){
     dEl.textContent = "00";
     hEl.textContent = "00";
     mEl.textContent = "00";
@@ -442,17 +439,17 @@ function updateCountdown() {
     return;
   }
 
-  const totalSeconds = Math.floor(diff / 1000);
-  const days = Math.floor(totalSeconds / (3600 * 24));
-  const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
-  const minutes = Math.floor((totalSeconds % 3600) / 60);
-  const seconds = totalSeconds % 60;
+  const total = Math.floor(diff / 1000);
+  const days = Math.floor(total / (3600*24));
+  const hours = Math.floor((total % (3600*24)) / 3600);
+  const minutes = Math.floor((total % 3600) / 60);
+  const seconds = total % 60;
 
-  dEl.textContent = pad2(days);
-  hEl.textContent = pad2(hours);
-  mEl.textContent = pad2(minutes);
-  sEl.textContent = pad2(seconds);
+  dEl.textContent = scPad(days);
+  hEl.textContent = scPad(hours);
+  mEl.textContent = scPad(minutes);
+  sEl.textContent = scPad(seconds);
 }
 
-setInterval(updateCountdown, 1000);
-updateCountdown();
+setInterval(updateStoreCountdown, 1000);
+updateStoreCountdown();

@@ -411,49 +411,48 @@ document.querySelectorAll('.package-card, .key-card').forEach(card => {
 });
 
 window.addEventListener('resize', optimizeImages);
+
 // =========================
-// COMING SOON COUNTDOWN
+// STORE COUNTDOWN (15 رمضان - 3 العصر - توقيت السعودية)
 // =========================
-// غيّر التاريخ هنا لوقت افتتاح المتجر (مثال: 2026-03-01 20:00:00)
-<script>
-    // وقت فتح المتجر
-    const storeDate = new Date("March 15, 2026 15:00:00 GMT+03:00").getTime();
 
-    const storeTimer = setInterval(() => {
-        const now = new Date().getTime();
-        const distance = storeDate - now;
+// ✅ هذا تاريخ ثابت، إذا تبي تغيّره قلّي
+const storeLaunchDate = new Date("2026-03-15T15:00:00+03:00").getTime();
 
-        if (distance <= 0) {
-            clearInterval(storeTimer);
-            document.querySelector(".store-countdown").innerHTML =
-                "<h2>🟢 Store Is Now Open!</h2>";
-            return;
-        }
+function pad2(n) {
+  return String(n).padStart(2, "0");
+}
 
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((distance / (1000 * 60)) % 60);
-        const seconds = Math.floor((distance / 1000) % 60);
+function updateCountdown() {
+  const now = Date.now();
+  const diff = storeLaunchDate - now;
 
-        document.getElementById("store-days").innerText = String(days).padStart(2, "0");
-        document.getElementById("store-hours").innerText = String(hours).padStart(2, "0");
-        document.getElementById("store-minutes").innerText = String(minutes).padStart(2, "0");
-        document.getElementById("store-seconds").innerText = String(seconds).padStart(2, "0");
-    }, 1000);
-</script>
+  const dEl = document.getElementById("store-days");
+  const hEl = document.getElementById("store-hours");
+  const mEl = document.getElementById("store-minutes");
+  const sEl = document.getElementById("store-seconds");
 
+  if (!dEl || !hEl || !mEl || !sEl) return;
+
+  if (diff <= 0) {
+    dEl.textContent = "00";
+    hEl.textContent = "00";
+    mEl.textContent = "00";
+    sEl.textContent = "00";
+    return;
+  }
+
+  const totalSeconds = Math.floor(diff / 1000);
+  const days = Math.floor(totalSeconds / (3600 * 24));
+  const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+
+  dEl.textContent = pad2(days);
+  hEl.textContent = pad2(hours);
+  mEl.textContent = pad2(minutes);
+  sEl.textContent = pad2(seconds);
+}
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
-
-// زر Notify (يعرض رسالة بسيطة)
-const notifyBtn = document.getElementById("notifyBtn");
-const notifyMsg = document.getElementById("notifyMsg");
-
-if (notifyBtn && notifyMsg) {
-  notifyBtn.addEventListener("click", () => {
-    notifyMsg.style.display = "flex";
-    setTimeout(() => (notifyMsg.style.display = "none"), 3500);
-  });
-}
-

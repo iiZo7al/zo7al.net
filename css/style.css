@@ -1945,3 +1945,55 @@ footer {
 .booster-card .rank-features ul li i {
     color: #ff73fa;
 }
+
+/* هذا الجزء سيجبر البطاقات الأربعة على البقاء في صف واحد */
+.ranks-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important; /* يمنع النزول لسطر جديد نهائياً */
+    justify-content: center !important;
+    gap: 15px !important;
+    padding: 20px 10px !important;
+    width: 100% !important;
+    max-width: 1300px !important;
+    margin: 0 auto !important;
+}
+
+/* هذا الجزء يضبط عرض كل بطاقة لتناسب الصف */
+.rank-card {
+    flex: 1 !important; /* يجعل كل البطاقات تتوزع بالتساوي */
+    min-width: 220px !important; /* يمنعها من أن تصبح نحيفة جداً */
+    max-width: 280px !important; /* يمنعها من أن تصبح ضخمة جداً */
+}
+
+/* تنسيق لون البوستر الوردي الذي اخترته #ff73fa */
+.booster-card {
+    border: 2px solid #ff73fa !important;
+    box-shadow: 0 0 15px rgba(255, 115, 250, 0.2) !important;
+}
+
+.booster-card .rank-name {
+    color: #ff73fa !important;
+}
+
+.booster-card .buy-btn {
+    background-color: #ff73fa !important;
+    border: none !important;
+    color: white !important;
+}
+
+/* لضمان التجاوب مع الجوال، هنا فقط نسمح بالنزول لسطر جديد */
+@media (max-width: 992px) {
+    .ranks-grid {
+        flex-wrap: wrap !important;
+    }
+    .rank-card {
+        flex: 0 0 45% !important; /* بطاقتين في الصف */
+    }
+}
+
+@media (max-width: 600px) {
+    .rank-card {
+        flex: 0 0 100% !important; /* بطاقة واحدة في الصف */
+    }
+}

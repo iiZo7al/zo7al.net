@@ -809,10 +809,12 @@ section {
 
 .ranks-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 35px;
+    /* هذا السطر هو الأهم: يجعلها 4 أعمدة في الشاشات الكبيرة */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; /* المسافة بين كل بطاقة والثانية */
+    padding: 20px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto; /* لتوسيط المتجر في منتصف الصفحة */
 }
 
 .rank-card, .package-card, .news-card, .key-card {
@@ -1886,4 +1888,60 @@ footer {
 .countdown small {
     font-size: 0.8em;
     opacity: 0.7;
+}
+
+
+/* للشاشات المتوسطة (مثل الآيباد) - تظهر بطاقتين في كل صف */
+@media (max-width: 1024px) {
+    .ranks-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* للجوالات - تظهر بطاقة واحدة فقط في كل صف */
+@media (max-width: 600px) {
+    .ranks-grid {
+        grid-template-columns: 1fr;
+    }
+}|
+
+/* تنسيقات خاصة ببطاقة الـ BOOSTER (اللون الوردي المضيء) */
+.booster-card {
+    /* إضافة إطار وردي مضيء حول البطاقة */
+    border: 2px solid #ff73fa;
+    /* إضافة توهج (Neon Glow) ناعم باللون الوردي */
+    box-shadow: 0 0 20px rgba(255, 115, 250, 0.25);
+    /* لجعل البطاقة تبدو مرتفعة قليلاً لجذب الانتباه */
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+/* تأثير عند تمرير الماوس (Hover) */
+.booster-card:hover {
+    box-shadow: 0 0 30px rgba(255, 115, 250, 0.4);
+    transform: translateY(-8px);
+}
+
+/* تغيير لون اسم الرتبة إلى الوردي */
+.booster-card .rank-header .rank-name {
+    color: #ff73fa;
+    text-shadow: 0 0 10px rgba(255, 115, 250, 0.5);
+}
+
+/* تغيير لون زر الشراء ليتناسب مع البطاقة */
+.booster-card .buy-btn {
+    background: linear-gradient(135deg, #ff73fa, #ff9eff);
+    border: none;
+    color: #000; /* لجعل النص أسود واضح على الخلفية الفاتحة */
+    font-weight: bold;
+}
+
+.booster-card .buy-btn:hover {
+    background: linear-gradient(135deg, #ff9eff, #ffb3ff);
+    box-shadow: 0 5px 15px rgba(255, 115, 250, 0.3);
+}
+
+/* تغيير لون أيقونات الميزات (الصح) إلى الوردي */
+.booster-card .rank-features ul li i {
+    color: #ff73fa;
 }

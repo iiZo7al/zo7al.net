@@ -44,7 +44,7 @@ window.addEventListener('scroll', () => {
 });
 
 document.getElementById('copyBtn').addEventListener('click', () => {
-    const ip = 'mc.zo7al.net';
+    const ip = 'zo7al.play-mc.fun';
     
     if (navigator.clipboard) {
         navigator.clipboard.writeText(ip).then(() => {
